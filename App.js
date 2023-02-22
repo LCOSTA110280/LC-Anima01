@@ -10,7 +10,7 @@ class App extends Component {
       altAnimada:new Animated.Value(50),
 
     }
-    Animated.sequence([
+    Animated.parallel([
       Animated.timing(
 
         this.state.altAnimada,
