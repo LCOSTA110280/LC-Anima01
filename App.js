@@ -10,26 +10,28 @@ class App extends Component {
       altAnimada:new Animated.Value(50),
 
     }
-    Animated.timing(
+    Animated.sequence([
+      Animated.timing(
 
-      this.state.altAnimada,
-      {
-        toValue:100,
-        duration:2000,
-        
-      }
+        this.state.altAnimada,
+        {
+          toValue:100,
+          duration:2000,
+          
+        },
 
-    ).start();
-    Animated.timing(
+      ),
+        Animated.timing(
 
-      this.state.larAnimada,
-      {
-        toValue:300,
-        duration:1000,
-        
-      }
+        this.state.larAnimada,
+        {
+          toValue:300,
+          duration:1000,
+          
+        }
 
-    ).start();
+      )
+    ]).start();
 
   }
 
