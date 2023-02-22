@@ -8,6 +8,7 @@ class App extends Component {
     this.state={
       larAnimada:new Animated.Value(150),
       altAnimada:new Animated.Value(50),
+      opacidadeAnimada: new Animated.Value(1),
 
     }
     Animated.parallel([
@@ -16,6 +17,16 @@ class App extends Component {
         this.state.altAnimada,
         {
           toValue:100,
+          duration:2000,
+          
+        },
+
+      ),
+      Animated.timing(
+
+        this.state.opacidadeAnimada,
+        {
+          toValue:0,
           duration:2000,
           
         },
@@ -46,6 +57,7 @@ class App extends Component {
             backgroundColor:'blue',
             alignItems:'center',
             justifyContent:'center',
+            opacity:this.state.opacidadeAnimada,
 
       }}>
         <Text style={styles.textoCarregando}>Carregando....</Text>
