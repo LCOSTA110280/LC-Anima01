@@ -40,13 +40,23 @@ class App extends Component {
         this.state.larAnimada,
         {
           toValue:300,
-          duration:1000,
+          duration:2000,
           
         }
 
       )
 
     ]),
+    Animated.timing(
+
+      this.state.opacidadeAnimada,
+      {
+        toValue:0,
+        duration:2000,
+        
+      },
+
+    ),
       
 
 
