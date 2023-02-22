@@ -8,25 +8,28 @@ class App extends Component {
     this.state={
       larAnimada:new Animated.Value(150),
       altAnimada:new Animated.Value(50),
-      opacidadeAnimada: new Animated.Value(1),
+      opacidadeAnimada: new Animated.Value(0),
 
     }
+    Animated.sequence([
+
+      Animated.timing(
+
+        this.state.opacidadeAnimada,
+        {
+          toValue:1,
+          duration:2000,
+          
+        },
+
+      ),
+   
     Animated.parallel([
       Animated.timing(
 
         this.state.altAnimada,
         {
           toValue:100,
-          duration:2000,
-          
-        },
-
-      ),
-      Animated.timing(
-
-        this.state.opacidadeAnimada,
-        {
-          toValue:0,
           duration:2000,
           
         },
@@ -42,6 +45,11 @@ class App extends Component {
         }
 
       )
+
+    ]),
+      
+
+
     ]).start();
 
   }
